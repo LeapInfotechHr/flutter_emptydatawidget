@@ -36,6 +36,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> with TickerProviderSt
   void dispose() {
       _backgroundController.dispose();
       _imageController.dispose();
+      _widgetController.dispose();
     super.dispose();
   }
 
