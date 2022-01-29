@@ -136,8 +136,17 @@ class _EmptyListWidgetState extends State<EmptyListWidget> with TickerProviderSt
   }
 
   Widget _shellChild(){
-    _titleTextStyle = widget.titleTextStyle ?? Theme.of(context).typography.dense.display1.copyWith(color: Color(0xff9da9c7));
-    _subtitleTextStyle = widget.subtitleTextStyle ?? Theme.of(context).typography.dense.body2.copyWith(color: Color(0xffabb8d6));
+    
+     _titleTextStyle = widget.titleTextStyle ??
+        Theme.of(context)
+            .typography
+            .dense
+            .copyWith(bodyText1: TextStyle(color: Color(0xff9da9c7)));
+    _subtitleTextStyle = widget.subtitleTextStyle ??
+        Theme.of(context)
+            .typography
+            .dense
+            .copyWith(bodyText2: TextStyle(color: Color(0xffabb8d6)));
     _packageImage = widget.packageImage ;
      
     return  FadeTransition(
