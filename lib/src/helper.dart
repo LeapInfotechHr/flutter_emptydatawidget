@@ -30,7 +30,9 @@ class _CustomTextState extends State<CustomText> {
       return Container();
     }
     if(widget.context != null && widget.style != null){
-      var font =  widget.style.fontSize == null ? Theme.of(context).textTheme.body1.fontSize :  widget.style.fontSize;
+        var font = widget.style.fontSize == null
+          ? Theme.of(context).textTheme.bodyText2.fontSize
+        :  widget.style.fontSize;
       style =  widget.style.copyWith(fontSize: font  - ( EmptyWidgetUtility.fullWidth(context) <= 375  ? 2 : 0));
     }
     return Text(widget.msg,style: widget.style,textAlign: widget.textAlign,overflow:widget.overflow,);
